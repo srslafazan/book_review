@@ -7,11 +7,11 @@
 </head>
 <body>
 	<div class="container">
-		<p class="pull-right"><a href="">Home</a> | <a href="">Add book and Review</a> | <a href="">Logout</a> </p>
+		<p class="pull-right"><a href="/books">Home</a> | <a href="/reviews">Add book and Review</a> | <a href="/">Logout</a> </p>
 		<div class="userinfo">
-			<h1>User Alias: Jesse</h1>
-			<h2>Name: Jessie Jaime</h2>
-			<h2>Email: jessiej@gmail.com</h2>
+			<h1>User Alias: <?= $results['alias'] ?></h1>
+			<h2>Name: <?= $results['name'] ?></h2>
+			<h2>Email: <?= $results['email'] ?></h2>
 			<h3>Total Reviews: 3</h3>
 		</div>
 		<div class="posted">

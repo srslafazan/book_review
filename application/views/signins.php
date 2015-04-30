@@ -22,7 +22,7 @@
 			</form>
 		</div>
 		<div class="log col-md-6 well">
-			<form action="/books/confirm" method="POST">
+			<form action="/signins/user_login" method="POST">
 				<h2>Login</h2>
 				<p>Email <input type="text" name="email"></p>
 				<p>Password: <input type="password" name="password"></p>

@@ -5,9 +5,11 @@ class Signins extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+
         $this->load->model('Signin');
         $this->output->enable_profiler();
         
+//login that checks sql
     }
 
     public function index()
@@ -26,12 +28,28 @@ class Signins extends CI_Controller {
         // var_dump($id);
         // die();
 
+
         $this->load->view('homes');
         // checking if information is being sent
         // var_dump($this->input->post());
         // die();
     }
 
+    public function user_login()
+    {
+        $post = $this->input->post();
+        $results = $this->Signin->login($post);
+        //login that checks sql
+
+        if($results && $post['password'] == $results['password'])
+        {
+            $this->load->view('homes', array('results'=>$results));
+        }
+        else
+        {
+            redirect('/');
+        }
+    }
 }
 
 //end of main controller

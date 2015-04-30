@@ -14,7 +14,7 @@
 	<div class="container">
 		<h1>Divergent</h1>
 		<h2>Author: Veronica Roth</h2>
-		<p class="pull-right"><a href="">Add book and review</a> | <a href="">Logout</a></p>
+		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/">Logout</a></p>
 		<h2>Reviews:</h2>
 		<div class="review row">
 			<div class="book col-md-6 ">

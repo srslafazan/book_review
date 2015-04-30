@@ -21,6 +21,7 @@ class Signin extends CI_Model {
 		return $this->db->query($id_query, $email)->row_array();
 	}
 
+
 	// adding book on the 'reviews' page
 	public function add_review_book($post)
 	{
@@ -31,6 +32,22 @@ class Signin extends CI_Model {
 
 		return $this->db->query($add_book_query, array($author, $book_name));
 	}
+
+	public function login($post)
+	{
+		// var_dump($post['email']);
+		// die();
+		$email_address = $post['email'];
+		$password = $post['password'];
+		$query = "SELECT * FROM users WHERE users.email = ?";
+		return $this->db->query($query, array($email_address))->row_array();
+	}
+
+	// public function login_reg()
+	// {
+	// 	$query = "SELECT * FROM users WHERE users.email = ?";
+	// 	return $this->db->query($query, array($post))->row_array();
+	// }
 
 }
 
