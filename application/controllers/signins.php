@@ -6,11 +6,18 @@ class Signins extends CI_Controller {
     {
         parent::__construct();
         // $this->output->enable_profiler();
+        $this->load->model('logins')
     }
 
     public function index()
     {
         $this->load->view('signins');
+    }
+
+    public function user_registration()
+    {
+    	$this->Login->registration($this->input->post());
+    	$this->load->view('welcome');
     }
 
 
