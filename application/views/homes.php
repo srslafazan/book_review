@@ -12,52 +12,46 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Divergent</h1>
-		<h2>Author: Veronica Roth</h2>
+		<h1>Welcome, Jessie!</h1>
 		<p class="pull-right"><a href="">Add book and review</a> | <a href="">Logout</a></p>
-		<h2>Reviews:</h2>
-		<div class="review row">
+		<h2>Recent Book Reviews:</h2>
+		<div class="books row">
 			<div class="book col-md-6 ">
 				<div class='well'>
+					<h4><a href="">The Greatest Salesman in the world</a></h4>
 					<p>Rating: * * * * *</p>
-					<p><a href="">Jerry</a> says: I love action!</p>
+					<p><a href="">Jerry</a> says: Very inspiring. Gives a lot of wisdom on relationship with people and an acheiving one's goal.</p>
 					<p>Posted on November 25, 2014</p>
 				</div>
 				<!-- </div> -->
 				<!-- <div class="book col-md-6 well"> -->
 				<div class='well'>
+					<h4><a href="">The Greatest Salesman in the world</a></h4>
 					<p>Rating: * * * * *</p>
-					<p><a href="">Jessie</a> says: I love action!</p>
+					<p><a href="">Jerry</a> says: Very inspiring. Gives a lot of wisdom on relationship with people and an acheiving one's goal.</p>
 					<p>Posted on November 25, 2014</p>
-					<p><a href="">Delete this review</a></p>
 				</div>
 				<!-- <div class="book col-md-6 well"> -->
 				<div class='well'>
+					<h4><a href="">The Greatest Salesman in the world</a></h4>
 					<p>Rating: * * * * *</p>
-					<p><a href="">Jerry</a> says: I love action!</p>
+					<p><a href="">Jerry</a> says: Very inspiring. Gives a lot of wisdom on relationship with people and an acheiving one's goal.</p>
 					<p>Posted on November 25, 2014</p>
 				</div>
 			</div>
 			<!-- .row -->
 
 			<div class="other col-md-6 well">
-				<h2>Add reivew</h2>
-				<form action="" method="POST">
-					<div class="review">
-						<textarea></textarea>
-					</div>
-					<p>Rating 
-						<select>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-					<input type="submit" value="Submit review" class="btn btn-success">
-				</form>
-			</div>
+				<h2>Other books with reivews</h2>
+				<div class="reviews">
+					<p>Harry Potter: The sorcerer's stone</p>
+					<p>The Hunger games</p>
+					<p>The life of pie</p>
+					<p>The Scrap book</p>
+					<p>Frozen</p>
+					<p>Like Mike</p>
+				</div>
+		</div>
 
 		</div>
 		<!-- .row -->
