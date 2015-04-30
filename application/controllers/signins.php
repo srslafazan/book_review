@@ -17,7 +17,6 @@ class Signins extends CI_Controller {
 
     public function user_registration()
     {
-
         // adding $id after statements carries the id to the 'home' page
         $id = $this->Signin->registration($this->input->post());
 
@@ -27,13 +26,11 @@ class Signins extends CI_Controller {
         // var_dump($id);
         // die();
 
-
         $this->load->view('homes');
         // checking if information is being sent
         // var_dump($this->input->post());
         // die();
     }
-
 
 }
 

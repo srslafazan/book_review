@@ -9,7 +9,7 @@
 	<div class="container">
 		<p class="pull-right"><a href="">Home</a> | <a href="">Logout</a></p>
 		<h1>Add a new book title and a review:</h1>
-		<form action="" method="POST"></form>
+		<form action="/reviews/add_book" method="POST"></form>
 			<p><b>Book Title:</b> <input type="text" name=""></p>
 			<p><b>Author:</b></p>
 			<p>Choose from the list: 
