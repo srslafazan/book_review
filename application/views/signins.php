@@ -22,10 +22,10 @@
 			</form>
 		</div>
 		<div class="log col-md-6 well">
-			<form action="" method="POST">
+			<form action="/books/confirm" method="POST">
 				<h2>Login</h2>
-				<p>Email <input type="text" name=""></p>
-				<p>Password: <input type="password" name=""></p>
+				<p>Email <input type="text" name="email"></p>
+				<p>Password: <input type="password" name="password"></p>
 				<input type="submit" value="Login" class="btn btn-primary">
 			</form>
 		</div>
