@@ -17,7 +17,7 @@ class Signins extends CI_Controller {
         $this->load->view('signins');
     }
 
-    public function user_registration()
+    public function user_registration($post)
     {
         // adding $id after statements carries the id to the 'home' page
         $id = $this->Signin->registration($this->input->post());
