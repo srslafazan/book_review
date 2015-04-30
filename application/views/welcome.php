@@ -1,56 +1,34 @@
-<!doctype html>
-<html lang='en'>
+<html>
 <head>
-	<title></title>
-	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>"
+	<title>Welcome</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome!</h1>
-		<div class="col-md-6">
-			<form action='' method='POST'> 
-			  <div class="form-group">
-			  	<h3>Register</h3>
-			    <label for="">Name</label>
-			    <input type="text" class="form-control" id="" placeholder="Name">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Alias</label>
-			    <input type="text" class="form-control" id="" placeholder="Alias">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Email address</label>
-			    <input type="email" class="form-control" id="" placeholder="Enter email">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Password</label>
-			    <input type="password" class="form-control" id="" placeholder="Password">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Confirm Password</label>
-			    <input type="password" class="form-control" id="" placeholder="Confirm Password">
-			  </div>
-			  <input class="btn btn-success" type="submit" value="Register">  
-		</div> <!-- col-md-2 end -->
-
-
-		<div class="col-md-6">
-			<form action='' method='POST'> 
-			  <div class="form-group">
-			  	<h3>Login</h3>
-			    <label for="">Email address</label>
-			    <input type="email" class="form-control" id="" placeholder="Email">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Password</label>
-			    <input type="password" class="form-control" id="" placeholder="Password">
-			  </div>
-			  <input class="btn btn-primary" type="submit" value="Login">
-			</form>  
+		<div class="title">
+			<h1>Welcome!</h1>
 		</div>
-	</div> <!-- container end -->
-
+		<div class="reg col-md-6 well">
+			<form action="" method="POST">
+				<h2>Register</h2>
+				<p>Name: <input type="text" name=""></p>
+				<p>Alias: <input type="text" name=""></p>
+				<p>Email: <input type="text" name=""></p>
+				<p>Password: <input type="password" name=""></p>
+				<p>Confirm PW: <input type="password" name=""></p>
+				<input type="submit" value="Register" class="btn btn-success">
+			</form>
+		</div>
+		<div class="log col-md-6 well">
+			<form action="" method="POST">
+				<h2>Login</h2>
+				<p>Email <input type="text" name=""></p>
+				<p>Password: <input type="password" name=""></p>
+				<input type="submit" value="Login" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
 </body>
-<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-2.1.3.min.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 </html>
