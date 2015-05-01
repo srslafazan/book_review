@@ -5,13 +5,15 @@ class Reviews extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->output->enable_profiler();
+        // $this->output->enable_profiler();
         $this->load->model('Signin');
     }
 
     public function index()
     {
-        $this->load->view('reviews');
+        $display_authors = $this->Signin->get_all_books_authors();
+
+        $this->load->view('reviews', array('display_authors'=>$display_authors));
     }
 
     public function add_book_reviews()
@@ -21,12 +23,8 @@ class Reviews extends CI_Controller {
     	// checking if data is being sent from view
     	// var_dump($this->input->post());
     	// die();
-
-
-    	redirect('books');
-
+    	// redirect('books');
     }
-
 }
 
 //end of main controller

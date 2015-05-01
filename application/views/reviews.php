@@ -14,9 +14,10 @@
 			<p><b>Author:</b></p>
 			<p>Choose from the list: 
 				<select>
-					<option>Stephen King</option>
-					<option>J.K. Rowling</option>
-					<option>Spike Lee</option>
+<?php 
+				foreach ($display_authors as $display_author) { ?>
+					<option><?= $display_author['author']; ?></option>					
+<?php   }   ?>
 				</select>
 			</p>
 			<p>Or add a new author: <input type="text" name="author"></p>

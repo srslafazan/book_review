@@ -10,18 +10,6 @@ class Homes extends CI_Controller {
 
 	}
 
-
-	// displaying all book name in overflow box on the left side
-    public function book_displays()
-    {
-    	$display_books = $this->Signin->get_all_books();
-    	
-    	// var_dump($display_books);
-    	// die();
-    	
-    	$this->load->view('homes', array('display_books'=>$display_books));
-    }
-
 }
 
 //end of main controller

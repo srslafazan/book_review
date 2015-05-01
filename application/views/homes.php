@@ -5,8 +5,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
-		.reviews {
-
+		div.reviews {
+			width: 300px;
+		    height: 150px;
+		    overflow: scroll;
 		}
 	</style>
 </head>
@@ -14,7 +16,7 @@
 
 	<div class="container">
 		<h1>Welcome, <?= $results["alias"] ?></h1>
-		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/signins/logout">Logout</a></p>
+		<p class="pull-right"><a href="/reviews/index">Add book and review</a> | <a href="/signins/logout">Logout</a></p>
 		<h2>Recent Book Reviews:</h2>
 		<div class="books row">
 			<div class="book col-md-6 ">
@@ -49,7 +51,7 @@
 				<div class="reviews">
 <?php
 				foreach ($display_books as $display_book) { ?>
-					<a><?= $display_book['name']; ?></a>
+					<a href=""><?= $display_book['name'] ?></a><br>
 <?php	} ?>
 			</div>
 		</div>
