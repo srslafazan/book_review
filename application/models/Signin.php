@@ -16,7 +16,7 @@ class Signin extends CI_Model {
 
 
 		// select users.email to display their info
-		$id_query = "SELECT id FROM users WHERE users.email = ?";
+		$id_query = "SELECT * FROM users WHERE users.email = ?";
 
 		return $this->db->query($id_query, $email)->row_array();
 	}
@@ -62,11 +62,34 @@ class Signin extends CI_Model {
 		return $this->db->query($query, array($email_address))->row_array();
 	}
 
+
 	public function get_all_books()
 	{
 		$get_books = "SELECT name FROM books";
 		
 		return $this->db->query($get_books)->result_array();
+
+	// public function login_reg()
+	// {
+	// 	$query = "SELECT * FROM users WHERE users.email = ?";
+	// 	return $this->db->query($query, array($post))->row_array();
+	// }
+	public function display_top3_reviews()
+	{
+		// $book_name =
+		// $book_rating = 
+		// $user_name =
+		// $review = 
+		// $date = 
+		// $user_id = 
+
+		$query = "SELECT books.name as book_name, reviews.rating as book_rating, users.id as reviewer_id, users.name as reviewer_name, reviews.review as review, reviews.created_at as date FROM books 
+LEFT JOIN reviews ON books.id = reviews.book_id 
+LEFT JOIN users ON users.id = reviews.user_id ORDER BY created_at DESC LIMIT 3";
+
+		return $this->db->query($query)->result_array();
+	}
+
 
 	}
 }

@@ -22,7 +22,9 @@ class Reviews extends CI_Controller {
     	// var_dump($this->input->post());
     	// die();
 
-    	redirect('reviews');
+
+    	redirect('books');
+
     }
 
 }

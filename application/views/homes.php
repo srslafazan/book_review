@@ -11,18 +11,21 @@
 	</style>
 </head>
 <body>
+
 	<div class="container">
 		<h1>Welcome, <?= $results["alias"] ?></h1>
-		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/">Logout</a></p>
+		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/signins/logout">Logout</a></p>
 		<h2>Recent Book Reviews:</h2>
 		<div class="books row">
 			<div class="book col-md-6 ">
+				<?php foreach ($reviews as $review) { ?>
 				<div class='well'>
 					<h4><a href="">The Greatest Salesman in the world</a></h4>
 					<p>Rating: * * * * *</p>
 					<p><a href="">Jerry</a> says: Very inspiring. Gives a lot of wisdom on relationship with people and an acheiving one's goal.</p>
 					<p>Posted on November 25, 2014</p>
 				</div>
+				<?php } ?>
 				<!-- </div> -->
 				<!-- <div class="book col-md-6 well"> -->
 				<div class='well'>

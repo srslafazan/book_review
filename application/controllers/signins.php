@@ -7,7 +7,7 @@ class Signins extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Signin');
-        $this->output->enable_profiler();
+        // $this->output->enable_profiler();
         
 //login that checks sql
     }
@@ -22,34 +22,55 @@ class Signins extends CI_Controller {
         // adding $id after statements carries the id to the 'home' page
         $id = $this->Signin->registration($this->input->post());
 
+        // printing out results
+        $post = $this->input->post();
+        $results = $this->Signin->registration($post);
+
         // passing the key 'user_id'
         $this->session->set_userdata('user_id', $id);
         // checking if id is passed to 'home' page
-        // var_dump($id);
+        // var_dump($results);
         // die();
 
 
-        $this->load->view('homes');
+        $this->load->view('homes', array('results'=>$results));
         // checking if information is being sent
         // var_dump($this->input->post());
         // die();
+    }
+
+    public function load_home($results)
+    {
+        $reviews = $this->Signin->display_top3_reviews();
+        $this->load->view('homes', array('reviews' => $reviews, 'results' => $results));
     }
 
     public function user_login()
     {
         $post = $this->input->post();
         $results = $this->Signin->login($post);
+
+        $id = $this->Signin->login($this->input->post());
+        $this->session->set_userdata('user_id', $id);
         //login that checks sql
 
         if($results && $post['password'] == $results['password'])
         {
-            $this->load->view('homes', array('results'=>$results));
+            $this->load_home($results);
         }
         else
         {
             redirect('/');
         }
     }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        redirect('/');
+
+    }
+
 }
 
 //end of main controller

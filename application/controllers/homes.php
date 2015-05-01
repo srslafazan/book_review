@@ -7,12 +7,9 @@ class Homes extends CI_Controller {
 		parent::__construct();
 		$this->output->enable_profiler();
 		$this->load->model('Signin');
+
 	}
 
-	public function index()
-	{
-		$this->load->view('homes');
-	}
 
 	// displaying all book name in overflow box on the left side
     public function book_displays()
