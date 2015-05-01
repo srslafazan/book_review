@@ -42,15 +42,13 @@
 			<!-- .row -->
 
 			<div class="other col-md-6 well">
-				<h2>Other books with reivews</h2>
+				<h2>Other books with reviews</h2>
 				<div class="reviews">
-					<p>Harry Potter: The sorcerer's stone</p>
-					<p>The Hunger games</p>
-					<p>The life of pie</p>
-					<p>The Scrap book</p>
-					<p>Frozen</p>
-					<p>Like Mike</p>
-				</div>
+<?php
+				foreach ($display_books as $display_book) { ?>
+					<a><?= $display_book['name']; ?></a>
+<?php	} ?>
+			</div>
 		</div>
 
 		</div>
