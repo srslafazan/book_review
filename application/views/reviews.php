@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="pull-right"><a href="/homes">Home</a> | <a href="/">Logout</a></p>
+		<p class="pull-right"><a href="/homes">Home</a> | <a href="/signins/logout">Logout</a></p>
 		<h1>Add a new book title and a review:</h1>
 		<form action="/reviews/add_book" method="POST"></form>
 			<p><b>Book Title:</b> <input type="text" name=""></p>

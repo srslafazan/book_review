@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
 		<h1>Welcome, <?= $results["alias"] ?></h1>
-		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/">Logout</a></p>
+		<p class="pull-right"><a href="/reviews">Add book and review</a> | <a href="/signins/logout">Logout</a></p>
 		<h2>Recent Book Reviews:</h2>
 		<div class="books row">
 			<div class="book col-md-6 ">

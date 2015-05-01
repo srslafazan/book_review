@@ -11,7 +11,7 @@ class Reviews extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('signins');
+        $this->load->view('reviews');
     }
 
     public function add_book($post)

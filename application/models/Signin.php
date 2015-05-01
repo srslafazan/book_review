@@ -16,7 +16,7 @@ class Signin extends CI_Model {
 
 
 		// select users.email to display their info
-		$id_query = "SELECT id FROM users WHERE users.email = ?";
+		$id_query = "SELECT * FROM users WHERE users.email = ?";
 
 		return $this->db->query($id_query, $email)->row_array();
 	}

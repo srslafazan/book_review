@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="pull-right"><a href="/books">Home</a> | <a href="/reviews">Add book and Review</a> | <a href="/">Logout</a> </p>
+		<p class="pull-right"><a href="/books">Home</a> | <a href="/reviews">Add book and Review</a> | <a href="/signins/logout">Logout</a> </p>
 		<div class="userinfo">
 			<h1>User Alias: <?= $results['alias'] ?></h1>
 			<h2>Name: <?= $results['name'] ?></h2>

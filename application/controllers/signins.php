@@ -22,14 +22,18 @@ class Signins extends CI_Controller {
         // adding $id after statements carries the id to the 'home' page
         $id = $this->Signin->registration($this->input->post());
 
+        // printing out results
+        $post = $this->input->post();
+        $results = $this->Signin->registration($post);
+
         // passing the key 'user_id'
         $this->session->set_userdata('user_id', $id);
         // checking if id is passed to 'home' page
-        // var_dump($id);
+        // var_dump($results);
         // die();
 
 
-        $this->load->view('homes');
+        $this->load->view('homes', array('results'=>$results));
         // checking if information is being sent
         // var_dump($this->input->post());
         // die();
@@ -39,6 +43,9 @@ class Signins extends CI_Controller {
     {
         $post = $this->input->post();
         $results = $this->Signin->login($post);
+
+        $id = $this->Signin->login($this->input->post());
+        $this->session->set_userdata('user_id', $id);
         //login that checks sql
 
         if($results && $post['password'] == $results['password'])
@@ -50,6 +57,14 @@ class Signins extends CI_Controller {
             redirect('/');
         }
     }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        redirect('/');
+
+    }
+
 }
 
 //end of main controller
