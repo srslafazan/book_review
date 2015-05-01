@@ -22,15 +22,26 @@ class Signin extends CI_Model {
 	}
 
 
-	// adding book on the 'reviews' page
-	public function add_review_book($post)
+	// adding book on the 'books' view page
+	public function add_book_review($post)
 	{
 		$author = $post['author'];
 		$book_name = $post['name'];
 
+		$review = $post['review'];
+		$rating = $post['rating'];
+
+		// var_dump($post);
+		// die();
+
+		// adding 2 queries to insert to 'books' and 'reviews' table
 		$add_book_query = "INSERT INTO books(author, name) VALUES(?,?)";
 
-		return $this->db->query($add_book_query, array($author, $book_name));
+		$add_review_query = "INSERT INTO reviews(review, rating, created_at) VALUES(?,?, NOW())";
+
+
+		// echo $add_book_query;
+		return $this->db->query($add_book_query, array($author, $book_name, $review, $rating));
 	}
 
 	public function login($post)
