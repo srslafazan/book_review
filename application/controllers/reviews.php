@@ -16,14 +16,13 @@ class Reviews extends CI_Controller {
 
     public function add_book_reviews()
     {
-        echo "book added!";
     	$this->Signin->add_book_review($this->input->post());
 
     	// checking if data is being sent from view
     	// var_dump($this->input->post());
     	// die();
 
-    	// redirect('/');
+    	redirect('books');
     }
 
     // public function add_review()

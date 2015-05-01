@@ -7,7 +7,7 @@ class Signins extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Signin');
-        $this->output->enable_profiler();
+        // $this->output->enable_profiler();
         
 //login that checks sql
     }
@@ -39,6 +39,12 @@ class Signins extends CI_Controller {
         // die();
     }
 
+    public function load_home($results)
+    {
+        $reviews = $this->Signin->display_top3_reviews();
+        $this->load->view('homes', array('reviews' => $reviews, 'results' => $results));
+    }
+
     public function user_login()
     {
         $post = $this->input->post();
@@ -50,7 +56,7 @@ class Signins extends CI_Controller {
 
         if($results && $post['password'] == $results['password'])
         {
-            $this->load->view('homes', array('results'=>$results));
+            $this->load_home($results);
         }
         else
         {

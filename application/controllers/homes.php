@@ -6,12 +6,9 @@ class Homes extends CI_Controller {
 	{
 		parent::__construct();
 		// $this->output->enable_profiler();
+		$this->load->model('signin');
 	}
 
-	public function index()
-	{
-		$this->load->view('homes');
-	}
 
 
 }
