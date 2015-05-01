@@ -13,7 +13,6 @@ class Books extends CI_Controller {
         $this->load->view('books');
     }
 
-
 }
 
 //end of main controller

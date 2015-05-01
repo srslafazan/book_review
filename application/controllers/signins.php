@@ -42,7 +42,11 @@ class Signins extends CI_Controller {
     public function load_home($results)
     {
         $reviews = $this->Signin->display_top3_reviews();
-        $this->load->view('homes', array('reviews' => $reviews, 'results' => $results));
+        $display_books = $this->Signin->get_all_books_authors();
+        
+        $this->load->view('homes', array('reviews' => $reviews, 'display_books'=>$display_books, 'results' => $results));
+
+
     }
 
     public function user_login()
