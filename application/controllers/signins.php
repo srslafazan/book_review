@@ -9,7 +9,7 @@ class Signins extends CI_Controller {
         $this->load->model('Signin');
         // $this->output->enable_profiler();
         
-//login that checks sql
+    //login that checks sql
     }
 
     public function index()
@@ -26,14 +26,14 @@ class Signins extends CI_Controller {
         $post = $this->input->post();
         $results = $this->Signin->registration($post);
 
-        // passing the key 'user_id'
-        $this->session->set_userdata('user_id', $id);
-        // checking if id is passed to 'home' page
-        // var_dump($results);
-        // die();
+        // var_dump($post);
 
+        $reviews = $this->Signin->display_top3_reviews();
+        $display_books = $this->Signin->get_all_books_authors();
+        
+        $this->load->view('homes', array('reviews' => $reviews, 'display_books'=>$display_books, 'results' => $results));
 
-        $this->load->view('homes', array('results'=>$results));
+        // $this->load->view('homes', array('results'=>$results));
         // checking if information is being sent
         // var_dump($this->input->post());
         // die();
@@ -45,8 +45,6 @@ class Signins extends CI_Controller {
         $display_books = $this->Signin->get_all_books_authors();
         
         $this->load->view('homes', array('reviews' => $reviews, 'display_books'=>$display_books, 'results' => $results));
-
-
     }
 
     public function user_login()
@@ -56,7 +54,6 @@ class Signins extends CI_Controller {
 
         $id = $this->Signin->login($this->input->post());
         $this->session->set_userdata('user_id', $id);
-        //login that checks sql
 
         if($results && $post['password'] == $results['password'])
         {

@@ -25,6 +25,23 @@ class Reviews extends CI_Controller {
     	// die();
     	// redirect('books');
     }
+
+    public function home()
+    {
+
+        // maybe need to be deleted
+
+        $id = $this->Signin->registration($this->input->post());
+        $post = $this->input->post();
+        $results = $this->Signin->registration($post);
+
+        var_dump($results);
+
+        $reviews = $this->Signin->display_top3_reviews();
+        $display_books = $this->Signin->get_all_books_authors();
+        
+        $this->load->view('homes', array('reviews' => $reviews, 'display_books'=>$display_books, 'results' => $results));
+    }
 }
 
 //end of main controller
