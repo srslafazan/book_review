@@ -31,9 +31,6 @@ class Signin extends CI_Model {
 		$review = $post['review'];
 		$rating = $post['rating'];
 
-		// var_dump($post);
-		// die();
-
 		// adding 2 queries to insert to 'books' and 'reviews' table
 		$add_book_query = "INSERT INTO books(author, name) VALUES(?,?)";
 
@@ -43,11 +40,6 @@ class Signin extends CI_Model {
 		$this->db->query($add_book_query, array($author, $book_name)) 
 		// '?' evulating if it's true
 		// shorthand 'if' statement
-
-		// insert a query here to grab the id
-
-
-
 		? $this->db->query($add_review_query, array($review, $rating)) 
 		:FALSE;
 	}
@@ -71,21 +63,20 @@ class Signin extends CI_Model {
 
 	}
 
-	// public function get_all_authors()
-	// {
-	// 	$get_authors_query = "SELECT author FROM books";
-
-	// 	return $this->db->query($get_authors_query)->result_array();
-	// }
-
 	public function display_top3_reviews()
 	{
-
 		$query = "SELECT books.name as book_name, reviews.rating as book_rating, users.id as reviewer_id, users.name as reviewer_name, reviews.review as review, reviews.created_at as date FROM books 
 			LEFT JOIN reviews ON books.id = reviews.book_id 
 			LEFT JOIN users ON users.id = reviews.user_id ORDER BY created_at DESC LIMIT 3";
 
 		return $this->db->query($query)->result_array();
+	}
+
+	public function get_user_profiles()
+	{
+		$get_user_profile = "SELECT * FROM users";
+
+		return $this->db->query($get_user_profile)->result_array();
 	}
 
 

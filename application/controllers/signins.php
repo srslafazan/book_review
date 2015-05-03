@@ -17,11 +17,9 @@ class Signins extends CI_Controller {
         $this->load->view('signins');
     }
 
+    // bug ** empty registration are being submitted to database ** //
     public function user_registration()
     {
-        // adding $id after statements carries the id to the 'home' page
-        $id = $this->Signin->registration($this->input->post());
-
         // printing out results
         $post = $this->input->post();
         $results = $this->Signin->registration($post);

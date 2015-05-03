@@ -23,19 +23,18 @@ class Reviews extends CI_Controller {
     	// checking if data is being sent from view
     	// var_dump($this->input->post());
     	// die();
-    	// redirect('books');
+        echo "Book and review added!";
     }
 
     public function home()
     {
-
         // maybe need to be deleted
 
-        $id = $this->Signin->registration($this->input->post());
-        $post = $this->input->post();
-        $results = $this->Signin->registration($post);
+        // $id = $this->Signin->registration($this->input->post());
+        // $post = $this->input->post();
+        // $results = $this->Signin->registration($post);
 
-        var_dump($results);
+        // var_dump($results);
 
         $reviews = $this->Signin->display_top3_reviews();
         $display_books = $this->Signin->get_all_books_authors();

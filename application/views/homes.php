@@ -23,9 +23,9 @@
 				<?php 
 				foreach ($reviews as $review) { ?>
 				<div class='well'>
-					<h4><a href=""><?= $review['book_name'] ?></a></h4>
+					<h4><a href="/books/index"><?= $review['book_name'] ?></a></h4>
 					<p>Rating:<?= $review['book_rating'] ?></p>
-					<p><a href=""><?= $review['reviewer_name'] ?></a> says: <?= $review['review'] ?></p>
+					<p><a href="/users/index"><?= $review['reviewer_name'] ?></a> says: <?= $review['review'] ?></p>
 					<p>Posted on <?= $review['date'] ?></p>
 				</div>
 				<?php } ?>
@@ -38,7 +38,7 @@
 				<div class="reviews">
 <?php
 				foreach ($display_books as $display_book) { ?>
-					<a href=""><?= $display_book['name'] ?></a><br>
+					<a href="/books/index"><?= $display_book['name'] ?></a><br>
 <?php	} ?>
 			</div>
 		</div>

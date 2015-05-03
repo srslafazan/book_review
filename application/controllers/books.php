@@ -6,6 +6,7 @@ class Books extends CI_Controller {
     {
         parent::__construct();
         // $this->output->enable_profiler();
+        $this->load->model('Signin');
     }
 
     public function index()
